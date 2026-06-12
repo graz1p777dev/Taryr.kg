@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TATYR - отдых среди гор Кыргызстана</title>
+  <meta name="description" content="Tatyr - премиальный комплекс отдыха у подножия гор недалеко от Бишкека: VIP-коттеджи, юрты, бассейн, банкеты и семейный отдых.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.pexels.com">
+  <style>
+    :root {
+      --brand: #731A19;
+      --brand-dark: #3b0d0d;
+      --accent: #FC9933;
+      --light: #F9F7F6;
+      --ink: #241715;
+      --muted: #7a6a63;
+      --line: rgba(115, 26, 25, 0.14);
+      --shadow: 0 24px 80px rgba(36, 23, 21, 0.16);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--light);
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(249, 247, 246, 0) 0%, #fff 42%, #f4efea 100%),
+        var(--light);
+    }
+
+    .shell {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 30;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid rgba(249, 247, 246, 0.18);
+      background: rgba(45, 18, 15, 0.34);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav__inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--light);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.24);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(249, 247, 246, 0.86);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav__links a {
+      transition: color 180ms ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      color: var(--light);
+      isolation: isolate;
+      background-image:
+        linear-gradient(90deg, rgba(24, 10, 9, 0.86) 0%, rgba(42, 16, 13, 0.54) 44%, rgba(27, 13, 11, 0.18) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.05) 42%, rgba(24, 10, 9, 0.76) 100%),
+        url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=86");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 160px;
+      background: linear-gradient(180deg, rgba(249, 247, 246, 0), var(--light));
+      z-index: -1;
+    }
+
+    .hero__content {
+      width: min(780px, 100%);
+      padding: 150px 0 118px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: rgba(249, 247, 246, 0.78);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 46px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(74px, 12vw, 166px);
+      line-height: 0.82;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero__subtitle {
+      max-width: 630px;
+      margin-bottom: 24px;
+      font-size: clamp(24px, 4vw, 48px);
+      line-height: 1.04;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #fff;
+    }
+
+    .hero__text {
+      max-width: 650px;
+      margin-bottom: 38px;
+      color: rgba(249, 247, 246, 0.84);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button--primary {
+      color: var(--brand-dark);
+      background: var(--accent);
+      box-shadow: 0 20px 50px rgba(252, 153, 51, 0.32);
+    }
+
+    .button--ghost {
+      color: var(--light);
+      border-color: rgba(249, 247, 246, 0.32);
+      background: rgba(249, 247, 246, 0.08);
+    }
+
+    .hero__stats {
+      position: absolute;
+      right: max(20px, calc((100vw - 1160px) / 2));
+      bottom: 58px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(118px, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid rgba(249, 247, 246, 0.18);
+      background: rgba(249, 247, 246, 0.16);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .stat {
+      padding: 21px 22px;
+      background: rgba(36, 16, 14, 0.38);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .stat span {
+      color: rgba(249, 247, 246, 0.78);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.82fr) minmax(280px, 1fr);
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .kicker {
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      color: var(--brand);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 74px);
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 20px;
+      color: #5d4c45;
+      font-size: 17px;
+      line-height: 1.82;
+    }
+
+    .image-stack {
+      position: relative;
+      min-height: 600px;
+    }
+
+    .image-stack__main,
+    .image-stack__small,
+    .gallery-card,
+    .cta {
+      box-shadow: var(--shadow);
+    }
+
+    .image-stack__main {
+      width: 78%;
+      height: 520px;
+      margin-left: auto;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .image-stack__small {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 46%;
+      height: 290px;
+      object-fit: cover;
+      border: 10px solid var(--light);
+      border-radius: var(--radius);
+    }
+
+    .quote-line {
+      margin-top: 16px;
+      padding-left: 24px;
+      border-left: 3px solid var(--accent);
+      color: var(--brand);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      line-height: 1.22;
+    }
+
+    .services {
+      background: var(--brand);
+      color: var(--light);
+    }
+
+    .services h2 {
+      color: var(--light);
+    }
+
+    .services .lead {
+      color: rgba(249, 247, 246, 0.72);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(249, 247, 246, 0.18);
+      border: 1px solid rgba(249, 247, 246, 0.18);
+    }
+
+    .service {
+      min-height: 270px;
+      padding: 30px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+        var(--brand);
+      transition: transform 200ms ease, background 200ms ease;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      background:
+        linear-gradient(180deg, rgba(252, 153, 51, 0.24), rgba(255, 255, 255, 0.03)),
+        var(--brand);
+    }
+
+    .service__num {
+      display: block;
+      margin-bottom: 42px;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .service h3 {
+      margin-bottom: 14px;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .service p {
+      margin: 0;
+      color: rgba(249, 247, 246, 0.72);
+      line-height: 1.65;
+    }
+
+    .why {
+      background:
+        linear-gradient(rgba(249, 247, 246, 0.88), rgba(249, 247, 246, 0.96)),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=84");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .benefit {
+      min-height: 146px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+      backdrop-filter: blur(10px);
+    }
+
+    .benefit span {
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+    }
+
+    .benefit strong {
+      color: var(--brand);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .gallery {
+      padding-bottom: 70px;
+      background: #fff;
+    }
+
+    .gallery-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      min-height: 650px;
+    }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      min-height: 300px;
+      background: var(--brand-dark);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42%, rgba(38, 12, 10, 0.72));
+    }
+
+    .gallery-card span {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .gallery-card--tall {
+      min-height: 650px;
+    }
+
+    .gallery-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cta-section {
+      padding-top: 70px;
+      background: #fff;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      display: grid;
+      align-items: end;
+      border-radius: var(--radius);
+      color: var(--light);
+      background:
+        linear-gradient(90deg, rgba(39, 13, 11, 0.86), rgba(39, 13, 11, 0.24)),
+        url("https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=2200&q=84");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cta__content {
+      max-width: 740px;
+      padding: 58px;
+    }
+
+    .cta h2 {
+      margin-bottom: 26px;
+      color: #fff;
+    }
+
+    .cta p {
+      color: rgba(249, 247, 246, 0.82);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .footer {
+      padding: 44px 0;
+      color: rgba(249, 247, 246, 0.72);
+      background: var(--brand-dark);
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer a {
+      color: var(--light);
+      font-weight: 700;
+      transition: color 180ms ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    .footer__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 760ms ease, transform 760ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero .reveal {
+      animation: heroReveal 900ms ease forwards;
+    }
+
+    .hero .reveal:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .hero .reveal:nth-child(3) {
+      animation-delay: 220ms;
+    }
+
+    .hero .reveal:nth-child(4) {
+      animation-delay: 320ms;
+    }
+
+    @keyframes heroReveal {
+      from {
+        opacity: 0;
+        transform: translateY(34px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero__stats {
+        position: static;
+        width: min(680px, calc(100% - 40px));
+        margin: -80px auto 42px;
+      }
+
+      .section-head,
+      .about-grid,
+      .gallery-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-card--tall {
+        min-height: 430px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .nav__inner {
+        height: 68px;
+      }
+
+      .nav__links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92svh;
+        background-position: 58% center;
+      }
+
+      .hero__content {
+        padding: 118px 0 110px;
+      }
+
+      h1 {
+        font-size: clamp(64px, 24vw, 110px);
+      }
+
+      .hero__text,
+      .lead {
+        font-size: 16px;
+      }
+
+      .hero__stats {
+        grid-template-columns: 1fr;
+        margin-top: -70px;
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      .section-head {
+        gap: 22px;
+        margin-bottom: 34px;
+      }
+
+      .about-grid {
+        gap: 34px;
+      }
+
+      .image-stack {
+        min-height: auto;
+        display: grid;
+        gap: 14px;
+      }
+
+      .image-stack__main,
+      .image-stack__small {
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        border: 0;
+      }
+
+      .service-grid,
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: 220px;
+      }
+
+      .gallery-layout {
+        min-height: auto;
+      }
+
+      .gallery-card,
+      .gallery-card--tall {
+        min-height: 330px;
+      }
+
+      .cta {
+        min-height: 520px;
+      }
+
+      .cta__content {
+        padding: 30px;
+      }
+
+      .footer__inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        transition-duration: 1ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav" aria-label="Навигация">
+      <div class="shell nav__inner">
+        <a class="brand-mark" href="#top" aria-label="Tatyr">
+          <img src="logo.png" alt="Tatyr">
+          <span>TATYR</span>
+        </a>
+        <nav class="nav__links">
+          <a href="#about">О нас</a>
+          <a href="#services">Услуги</a>
+          <a href="#gallery">Галерея</a>
+          <a href="https://www.instagram.com/tatyr_kg/" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Главный экран">
+        <div class="shell">
+          <div class="hero__content">
+            <p class="eyebrow reveal">Арашан, Кыргызстан</p>
+            <h1 class="reveal">TATYR</h1>
+            <p class="hero__subtitle reveal">Отдых среди гор Кыргызстана</p>
+            <p class="hero__text reveal">Уединённое место в живописном Арашане, где чистый горный воздух, природная тишина и комфорт создают идеальные условия для отдыха всей семьёй.</p>
+            <div class="actions reveal">
+              <a class="button button--primary" href="https://www.instagram.com/tatyr_kg/" target="_blank" rel="noopener">Забронировать</a>
+              <a class="button button--ghost" href="#about">Смотреть комплекс</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero__stats" aria-label="Ключевые преимущества">
+          <div class="stat">
+            <strong>30</strong>
+            <span>минут от Бишкека</span>
+          </div>
+          <div class="stat">
+            <strong>VIP</strong>
+            <span>коттеджи и юрты</span>
+          </div>
+          <div class="stat">
+            <strong>360</strong>
+            <span>виды на горы</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="shell about-grid">
+          <div class="about-copy reveal">
+            <div>
+              <p class="kicker">О нас</p>
+              <h2>Tatyr - место спокойствия у подножия гор</h2>
+            </div>
+            <p>Tatyr - это современный комплекс отдыха, расположенный у подножия гор недалеко от Бишкека.</p>
+            <p>Мы создали пространство, где можно отвлечься от городской суеты, насладиться красотой природы, провести время с близкими и наполниться новыми впечатлениями.</p>
+            <p>Каждый уголок комплекса окружён живописными пейзажами, свежим воздухом и атмосферой спокойствия.</p>
+            <p class="quote-line">Природа, комфорт и настоящее кыргызское гостеприимство.</p>
+          </div>
+          <div class="image-stack reveal" aria-label="Атмосфера Tatyr">
+            <img class="image-stack__main" src="https://images.unsplash.com/photo-1531177071278-615c2b1ad5c4?auto=format&fit=crop&w=1300&q=84" alt="Домики среди гор">
+            <img class="image-stack__small" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82" alt="Отдых у воды">
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="kicker">Наши услуги</p>
+              <h2>Форматы отдыха для любого повода</h2>
+            </div>
+            <p class="lead">От приватного семейного уикенда до большого торжества: Tatyr объединяет комфортное размещение, национальный колорит и природную атмосферу.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service reveal">
+              <span class="service__num">01</span>
+              <h3>VIP-коттеджи</h3>
+              <p>Комфортное проживание для семейного отдыха и дружеских компаний.</p>
+            </article>
+            <article class="service reveal">
+              <span class="service__num">02</span>
+              <h3>Национальные юрты</h3>
+              <p>Уникальная возможность познакомиться с традициями кыргызского гостеприимства.</p>
+            </article>
+            <article class="service reveal">
+              <span class="service__num">03</span>
+              <h3>Бассейн под открытым небом</h3>
+              <p>Освежающий отдых с видом на горные пейзажи.</p>
+            </article>
+            <article class="service reveal">
+              <span class="service__num">04</span>
+              <h3>Банкетный зал</h3>
+              <p>Проведение свадеб, юбилеев, корпоративов и других мероприятий.</p>
+            </article>
+            <article class="service reveal">
+              <span class="service__num">05</span>
+              <h3>Беседки и зоны отдыха</h3>
+              <p>Уютные места для встреч, пикников и семейного досуга.</p>
+            </article>
+            <article class="service reveal">
+              <span class="service__num">06</span>
+              <h3>Свежая форель</h3>
+              <p>Возможность попробовать вкусную рыбу в окружении природы.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="why">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="kicker">Почему выбирают Tatyr</p>
+              <h2>Близко к городу, далеко от суеты</h2>
+            </div>
+            <p class="lead">Здесь легко замедлиться: горный воздух, видовые локации и продуманная инфраструктура создают ощущение приватного курорта.</p>
+          </div>
+          <div class="benefits">
+            <div class="benefit reveal"><span>01</span><strong>Всего 30 минут от Бишкека</strong></div>
+            <div class="benefit reveal"><span>02</span><strong>Чистый горный воздух</strong></div>
+            <div class="benefit reveal"><span>03</span><strong>Живописные виды</strong></div>
+            <div class="benefit reveal"><span>04</span><strong>Комфортное размещение</strong></div>
+            <div class="benefit reveal"><span>05</span><strong>Национальный колорит</strong></div>
+            <div class="benefit reveal"><span>06</span><strong>Идеально для семейного отдыха</strong></div>
+            <div class="benefit reveal"><span>07</span><strong>Для мероприятий любого масштаба</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="kicker">Галерея впечатлений</p>
+              <h2>Каждый день наполнен красивыми моментами</h2>
+            </div>
+            <p class="lead">Рассветы над горами, семейные прогулки, отдых у бассейна и незабываемые встречи с друзьями - атмосфера, ради которой хочется возвращаться.</p>
+          </div>
+          <div class="gallery-layout">
+            <figure class="gallery-card gallery-card--tall reveal">
+              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1300&q=86" alt="Горный рассвет">
+              <span>Рассветы над горами</span>
+            </figure>
+            <div class="gallery-side">
+              <figure class="gallery-card reveal">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=84" alt="Комфортный интерьер">
+                <span>Комфортные вечера</span>
+              </figure>
+              <figure class="gallery-card reveal">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=84" alt="Бассейн на курорте">
+                <span>Отдых у бассейна</span>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" aria-label="Бронирование">
+        <div class="shell">
+          <div class="cta reveal">
+            <div class="cta__content">
+              <p class="kicker">Забронируйте отдых уже сегодня</p>
+              <h2>Подарите себе возможность насладиться природой и комфортом</h2>
+              <p>Tatyr - место, куда хочется возвращаться снова и снова. Выберите формат отдыха, напишите нам в Instagram и проведите день среди гор, тишины и настоящего кыргызского гостеприимства.</p>
+              <div class="actions">
+                <a class="button button--primary" href="https://www.instagram.com/tatyr_kg/" target="_blank" rel="noopener">Написать в Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer__inner">
+        <div>TATYR © 2026</div>
+        <div class="footer__links">
+          <a href="https://www.instagram.com/tatyr_kg/" target="_blank" rel="noopener">Instagram Tatyr</a>
+          <a href="https://github.com/graz1p777dev" target="_blank" rel="noopener">Создано graz1p777</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".nav");
+      nav.style.background = window.scrollY > 24
+        ? "rgba(59, 13, 13, 0.86)"
+        : "rgba(45, 18, 15, 0.34)";
+    }, { passive: true });
+  </script>
+</body>
+</html>
