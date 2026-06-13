@@ -167,6 +167,16 @@ export default function CTA() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Meiman.kg */}
+            <a
+              href="https://meiman.kg/en/estates/vip-kottedzh-v-bo-tatyr-bishkek--2278"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-[#1a1a1a] text-sm font-semibold tracking-wider hover:bg-white/90 transition-all duration-300"
+            >
+              <img src="/meiman.svg" alt="Meiman" className="h-5 w-auto" />
+            </a>
+
             {/* WhatsApp */}
             <a
               href={WA_LINK}
