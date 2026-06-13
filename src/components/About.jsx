@@ -4,11 +4,10 @@ import { useApp } from '../contexts/AppContext'
 
 export default function About() {
   const { ref, visible } = useReveal()
-  const { t, theme } = useApp()
-  const isDark = theme === 'dark'
+  const { t } = useApp()
 
   return (
-    <section id="about" className="py-24 md:py-32" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section id="about" className="py-24 md:py-32 bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref} className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -20,11 +19,11 @@ export default function About() {
               <span className="h-px w-10 bg-accent" />
               <span className="text-accent text-xs tracking-[0.3em] font-medium uppercase">{t('about', 'badge')}</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-8" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-8 text-gray-900 dark:text-light">
               {t('about', 'title')}<br />
               <em className="not-italic text-accent">{t('about', 'titleAccent')}</em>
             </h2>
-            <div className="space-y-5 font-light leading-relaxed text-[0.95rem]" style={{ color: 'var(--text-muted)' }}>
+            <div className="space-y-5 font-light leading-relaxed text-[0.95rem] text-gray-600 dark:text-light/60">
               <p>{t('about', 'p1')}</p>
               <p>{t('about', 'p2')}</p>
             </div>
@@ -38,7 +37,7 @@ export default function About() {
                   <p className="font-serif text-3xl text-accent font-light">
                     {s.num}<span className="text-lg">{s.unit}</span>
                   </p>
-                  <p className="text-xs tracking-wider mt-1" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
+                  <p className="text-xs tracking-wider mt-1 text-gray-400 dark:text-light/40">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -56,7 +55,7 @@ export default function About() {
                 alt="Горный пейзаж"
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -left-6 w-48 h-48 border border-accent/20 -z-10" />
             <div className="absolute -top-6 -right-6 w-32 h-32 border border-brand/20 -z-10" />

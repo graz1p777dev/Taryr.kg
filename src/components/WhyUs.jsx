@@ -8,7 +8,7 @@ export default function WhyUs() {
   const reasons = t('why', 'reasons') || []
 
   return (
-    <section id="why" className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section id="why" className="py-24 md:py-32 relative overflow-hidden bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#731A19]/3 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref} className="grid md:grid-cols-2 gap-16 items-center">
@@ -26,8 +26,9 @@ export default function WhyUs() {
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#731A19]/20 to-transparent" />
             </div>
+            {/* Quote box — always dark (sits on dark image) */}
             <div className="absolute bottom-8 -right-4 max-w-xs bg-[#0d0d0d]/90 backdrop-blur-sm border border-accent/20 p-6">
-              <p className="font-serif text-lg italic text-light/80 leading-relaxed">{t('why', 'quote')}</p>
+              <p className="font-serif text-lg italic text-[#F9F7F6]/80 leading-relaxed">{t('why', 'quote')}</p>
               <div className="mt-3 h-px w-12 bg-accent" />
             </div>
           </motion.div>
@@ -42,7 +43,7 @@ export default function WhyUs() {
                 <span className="h-px w-10 bg-accent" />
                 <span className="text-accent text-xs tracking-[0.3em] font-medium uppercase">{t('why', 'badge')}</span>
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-10" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-10 text-gray-900 dark:text-light">
                 {t('why', 'title')}<br />
                 <em className="not-italic text-accent">{t('why', 'titleAccent')}</em>
               </h2>
@@ -62,7 +63,7 @@ export default function WhyUs() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="font-light text-[0.95rem] tracking-wide transition-colors duration-300 group-hover:text-accent" style={{ color: 'var(--text-muted)' }}>
+                  <span className="font-light text-[0.95rem] tracking-wide text-gray-600 dark:text-light/70 group-hover:text-accent transition-colors duration-300">
                     {r}
                   </span>
                 </motion.div>
