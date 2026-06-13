@@ -7,6 +7,7 @@ import Gallery from './components/Gallery'
 import Map from './components/Map'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Map />
       <CTA />
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }
