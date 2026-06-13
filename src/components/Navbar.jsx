@@ -39,6 +39,7 @@ export default function Navbar() {
     { label: t('nav', 'services'), href: '#services' },
     { label: t('nav', 'why'), href: '#why' },
     { label: t('nav', 'gallery'), href: '#gallery' },
+    { label: t('nav', 'map'), href: '#map' },
     { label: t('nav', 'contact'), href: '#cta' },
   ]
 

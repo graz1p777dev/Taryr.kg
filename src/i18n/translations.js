@@ -6,6 +6,7 @@ export const translations = {
       why: 'Эмне үчүн биз',
       gallery: 'Галерея',
       contact: 'Байланыш',
+      map: 'Карта',
       book: 'Брондоо',
     },
     hero: {
@@ -86,6 +87,7 @@ export const translations = {
       why: 'Почему мы',
       gallery: 'Галерея',
       contact: 'Контакт',
+      map: 'Карта',
       book: 'Забронировать',
     },
     hero: {
@@ -166,6 +168,7 @@ export const translations = {
       why: 'Why Us',
       gallery: 'Gallery',
       contact: 'Contact',
+      map: 'Map',
       book: 'Book Now',
     },
     hero: {

@@ -4,6 +4,7 @@ import About from './components/About'
 import Services from './components/Services'
 import WhyUs from './components/WhyUs'
 import Gallery from './components/Gallery'
+import Map from './components/Map'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 
@@ -16,6 +17,7 @@ export default function App() {
       <Services />
       <WhyUs />
       <Gallery />
+      <Map />
       <CTA />
       <Footer />
     </div>
