@@ -3,25 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  html { scroll-behavior: smooth; }
+
+  /* Dark theme (default) */
+  :root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #080808;
+    --bg-card: #111111;
+    --text-primary: #F9F7F6;
+    --text-muted: rgba(249,247,246,0.5);
+    --border: rgba(255,255,255,0.06);
   }
+
+  /* Light theme */
+  html.light {
+    --bg-primary: #faf8f6;
+    --bg-secondary: #f2ede9;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-muted: rgba(26,26,26,0.55);
+    --border: rgba(0,0,0,0.08);
+  }
+
   body {
-    @apply bg-[#0a0a0a] text-light;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
-@layer utilities {
-  .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-  }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: #731A19; border-radius: 3px; }
-
-/* Smooth image loading */
-img { transition: opacity 0.3s ease; }
