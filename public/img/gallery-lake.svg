@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#111111"/>
+  <!-- subtle grid -->
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <!-- center cross -->
+  <line x1="300" y1="240" x2="300" y2="360" stroke="#731A19" stroke-width="1" opacity="0.5"/>
+  <line x1="240" y1="300" x2="360" y2="300" stroke="#731A19" stroke-width="1" opacity="0.5"/>
+  <circle cx="300" cy="300" r="5" fill="#731A19" opacity="0.7"/>
+  <!-- resolution -->
+  <text x="300" y="262" text-anchor="middle" font-size="22" font-weight="600" fill="#FC9933" font-family="Inter,sans-serif">600 × 600</text>
+  <!-- divider -->
+  <line x1="260" y1="282" x2="340" y2="282" stroke="#FC9933" stroke-width="0.8" opacity="0.4"/>
+  <!-- description -->
+  <text x="300" y="310" text-anchor="middle" font-size="15" fill="#F9F7F6" opacity="0.55" font-family="Inter,sans-serif">Горное озеро или река Арашан</text>
+  <!-- TATYR watermark -->
+  <text x="300" y="580" text-anchor="middle" font-size="11" fill="#731A19" opacity="0.4" font-family="serif" letter-spacing="6">gallery-lake.jpg</text>
+</svg>

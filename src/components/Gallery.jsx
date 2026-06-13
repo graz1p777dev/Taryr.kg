@@ -3,12 +3,12 @@ import { useReveal } from './useReveal'
 import { useApp } from '../contexts/AppContext'
 
 const photos = [
-  { src: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800&q=80&auto=format&fit=crop', alt: 'Горный рассвет', span: 'md:col-span-2 md:row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80&auto=format&fit=crop', alt: 'Природа' },
-  { src: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600&q=80&auto=format&fit=crop', alt: 'Горное озеро' },
-  { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop', alt: 'Горный пик' },
-  { src: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=600&q=80&auto=format&fit=crop', alt: 'Семейный отдых' },
-  { src: 'https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?w=600&q=80&auto=format&fit=crop', alt: 'Горный пейзаж' },
+  { src: '/img/gallery-sunrise.svg', alt: 'Горный рассвет', span: 'md:col-span-2 md:row-span-2' },
+  { src: '/img/gallery-nature.svg',  alt: 'Природа' },
+  { src: '/img/gallery-lake.svg',    alt: 'Горное озеро' },
+  { src: '/img/gallery-peak.svg',    alt: 'Горный пик' },
+  { src: '/img/gallery-family.svg',  alt: 'Семейный отдых' },
+  { src: '/img/gallery-view.svg',    alt: 'Горный пейзаж' },
 ]
 
 function Photo({ p, i }) {

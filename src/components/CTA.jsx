@@ -77,7 +77,7 @@ export default function CTA() {
     <section id="cta" className="relative py-32 md:py-40 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1565117100-e854e3a33a4a?w=1920&q=80&auto=format&fit=crop"
+          src="/img/cta-bg.svg"
           alt="Горный пейзаж"
           className="w-full h-full object-cover"
         />

@@ -4,12 +4,12 @@ import { useApp } from '../contexts/AppContext'
 
 const ICONS = ['🏡', '⛺', '🏊', '🎉', '🌳', '🎣']
 const IMGS = [
-  'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600&q=80&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=600&q=80&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80&auto=format&fit=crop',
+  '/img/service-cottage.svg',
+  '/img/service-yurt.svg',
+  '/img/service-pool.svg',
+  '/img/service-banquet.svg',
+  '/img/service-gazebo.svg',
+  '/img/service-trout.svg',
 ]
 
 function ServiceCard({ icon, img, title, desc, index }) {

@@ -51,7 +51,7 @@ export default function About() {
           >
             <div className="relative overflow-hidden aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85&auto=format&fit=crop"
+                src="/img/about-main.svg"
                 alt="Горный пейзаж"
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               />

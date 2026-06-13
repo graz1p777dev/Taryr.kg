@@ -20,7 +20,7 @@ export default function Hero() {
     <section id="hero" className="relative h-screen min-h-[620px] flex items-start overflow-hidden">
       <div ref={parallaxRef} className="absolute inset-0 scale-110 will-change-transform">
         <img
-          src="https://images.unsplash.com/photo-1565117100-e854e3a33a4a?w=1920&q=85&auto=format&fit=crop"
+          src="/img/hero-bg.svg"
           alt="Горы Кыргызстана"
           className="w-full h-full object-cover object-center"
         />

@@ -20,7 +20,7 @@ export default function WhyUs() {
           >
             <div className="relative overflow-hidden aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85&auto=format&fit=crop"
+                src="/img/whyus-nature.svg"
                 alt="Природа Кыргызстана"
                 className="w-full h-full object-cover"
               />
