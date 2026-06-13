@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/40 to-[#0a0a0a]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#731A19]/20 to-transparent" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 md:pt-36">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-36">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -45,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-[clamp(3.5rem,10vw,8rem)] font-light leading-none tracking-widest text-light mb-4"
+          className="font-serif text-[clamp(2.8rem,10vw,8rem)] font-light leading-none tracking-widest text-light mb-4"
         >
           {t('hero', 'title')}
         </motion.h1>

@@ -10,8 +10,8 @@ export default function WhyUs() {
   return (
     <section id="why" className="py-24 md:py-32 relative overflow-hidden bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#731A19]/3 pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6">
-        <div ref={ref} className="grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div ref={ref} className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={visible ? { opacity: 1, scale: 1 } : {}}
@@ -27,8 +27,8 @@ export default function WhyUs() {
               <div className="absolute inset-0 bg-gradient-to-tr from-[#731A19]/20 to-transparent" />
             </div>
             {/* Quote box — always dark (sits on dark image) */}
-            <div className="absolute bottom-8 -right-4 max-w-xs bg-[#0d0d0d]/90 backdrop-blur-sm border border-accent/20 p-6">
-              <p className="font-serif text-lg italic text-[#F9F7F6]/80 leading-relaxed">{t('why', 'quote')}</p>
+            <div className="absolute bottom-4 right-2 md:bottom-8 md:-right-4 max-w-[75%] md:max-w-xs bg-[#0d0d0d]/90 backdrop-blur-sm border border-accent/20 p-4 md:p-6">
+              <p className="font-serif text-sm md:text-lg italic text-[#F9F7F6]/80 leading-relaxed">{t('why', 'quote')}</p>
               <div className="mt-3 h-px w-12 bg-accent" />
             </div>
           </motion.div>

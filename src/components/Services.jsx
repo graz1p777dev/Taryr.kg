@@ -45,7 +45,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-24 md:py-32 bg-stone-100 dark:bg-[#080808] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}

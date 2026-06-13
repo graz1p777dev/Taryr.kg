@@ -16,9 +16,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-black/8 dark:border-white/5 bg-stone-50 dark:bg-[#060606] py-12 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-10">
-          <div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 mb-10">
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <img src="/logo.png" alt="Tatyr" className="h-8 w-auto object-contain" />
               <span className="font-serif text-lg tracking-widest text-gray-900 dark:text-light">TATYR</span>

@@ -15,7 +15,7 @@ export default function Map() {
 
   return (
     <section id="map" className="py-24 md:py-32 bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -42,18 +42,19 @@ export default function Map() {
         >
           {/* Map container */}
           <div className="relative overflow-hidden border border-black/8 dark:border-white/5 shadow-2xl shadow-black/20">
+            <div className="relative h-[280px] sm:h-[380px] md:h-[480px]">
             <iframe
               title="Tatyr на карте"
               src="https://maps.google.com/maps?q=Arashan+village+Bishkek+Kyrgyzstan&t=&z=14&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="480"
-              style={{ border: 0, display: 'block', filter: 'grayscale(20%) contrast(1.05)' }}
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0, filter: 'grayscale(20%) contrast(1.05)' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+            </div>
             {/* Overlay with address pin card */}
-            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white dark:bg-[#0d0d0d] border border-black/8 dark:border-white/10 shadow-xl p-4 md:p-5 max-w-xs">
+            <div className="absolute bottom-3 left-3 md:bottom-6 md:left-6 bg-white dark:bg-[#0d0d0d] border border-black/8 dark:border-white/10 shadow-xl p-3 md:p-5 max-w-[calc(100%-2rem)] md:max-w-xs">
               <div className="flex items-start gap-3">
                 <div className="mt-0.5 w-8 h-8 bg-brand flex items-center justify-center flex-shrink-0">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">

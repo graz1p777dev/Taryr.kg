@@ -37,12 +37,12 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-24 md:py-32 bg-stone-100 dark:bg-[#080808] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={visible ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="h-px w-10 bg-accent" />
@@ -56,7 +56,7 @@ export default function Gallery() {
             {t('gallery', 'desc')}
           </p>
         </motion.div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[200px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 auto-rows-[150px] md:auto-rows-[200px]">
           {photos.map((p, i) => <Photo key={p.src} p={p} i={i} />)}
         </div>
       </div>

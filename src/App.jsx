@@ -11,7 +11,7 @@ import WhatsAppFloat from './components/WhatsAppFloat'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300">
+    <div className="min-h-screen bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300 overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />
